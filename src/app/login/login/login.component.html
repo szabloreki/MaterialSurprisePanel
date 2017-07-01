@@ -1,0 +1,30 @@
+<div class="parent">
+  <form #form="ngForm" (ngSubmit)="login(user)">
+  <div class="parent-layer">
+    <div class="login-box">
+      <md-toolbar color="primary">
+        <span>Logowanie | SurpriseAdmin <small>Panel administratora</small></span>
+      </md-toolbar>
+      <div class="" fxLayout="row" fxLayout.sm="column" fxLayoutGap="16px">
+        <md-card fxFlex="100">
+            <md-input-container class="example-full-width">
+              <input mdInput name="email" placeholder="Email" [(ngModel)]="user.email">
+            </md-input-container>
+            <md-input-container class="example-full-width">
+              <input mdInput name="password" placeholder="Hasło" [(ngModel)]="user.password" type="password" (keyup.enter)="login(user)">
+            </md-input-container>
+            <div fxLayout="row footer-div">
+              <a md-raised-button (click)="login(user)">
+                Logowanie
+              </a>
+              <span class="example-spacer"></span>
+              <a md-raised-button [routerLink]="['/app']">
+                Przejdź
+              </a>
+            </div>
+        </md-card>
+      </div>
+    </div>
+  </div>
+  </form>
+</div>

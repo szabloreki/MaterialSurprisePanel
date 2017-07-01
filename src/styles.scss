@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import '../../node_modules/ng2-md-datatable/datatable-theme';
+
+@include mat-core();
+
+$primary: mat-palette($mat-blue, 600, 400, 800);
+$accent:  mat-palette($mat-deep-purple, 500, 300, 700);
+$warn:    mat-palette($mat-red, 500, 300, 900);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+@include mat-datatable-theme($theme);
+
+
+html, body {
+  display: flex;
+  flex-direction: column;
+
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+  height: 100%;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.list--checkbox {
+  margin-right: 15px;
+}
+.content {
+  padding: 12px;
+  width: 100%;
+}
+.example-form {
+  width: 100%;
+}
+.example-full-width {
+  width: 100%;
+}
+.add-subcategory {
+  margin: 0px 10px;
+}
+
+.clearfix::before,
+.clearfix::after {
+  flex-basis: 0;
+  order: 1;
+}
+.mdl-data-table {
+  width: 100%;
+
+  th, td {
+    text-align: left;
+  }
+
+  td {
+    padding: 12px 18px 12px;
+    .mat-mini-fab {
+      width: 30px;
+      height: 30px;
+
+      .mat-icon {
+        font-size: 18px;
+        line-height: 16px;
+      }
+    }
+  }
+}
+.small-button {
+}
+.mat-tab-body {
+  padding-top: 30px;
+}
+.mat-card-content {
+  padding-top: 10px;
+}
+.product-right-card {
+  margin-bottom: 20px;
+}

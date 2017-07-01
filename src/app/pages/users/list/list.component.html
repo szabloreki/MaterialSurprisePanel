@@ -1,0 +1,43 @@
+<div class="content" fxLayout="row" fxLayout.sm="column" fxLayoutGap="16px">
+  <md-card fxFlex="100">
+    <md-toolbar>
+      <span>Lista Uzytkowników</span>
+      <span class="example-spacer"></span>
+      <button md-mini-fab [routerLink]="['../add/']">
+        <md-icon>add</md-icon>
+      </button>
+    </md-toolbar>
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <thead>
+      <tr>
+        <th>Imię</th>
+        <th>Nickname</th>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody class="list">
+      <tr *ngFor="let user of (users$ | async)">
+        <td>
+          {{user}}
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+          <button md-mini-fab [routerLink]="['/app/users/edit', user._id]">
+            <md-icon>mode_edit</md-icon>
+          </button>
+        </td>
+        <td>
+          <button color="warn" md-mini-fab (click)="delete(user._id)">
+            <md-icon>delete</md-icon>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </md-card>
+</div>

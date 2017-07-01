@@ -1,0 +1,30 @@
+<div fxLayout="column" fxFlex>
+
+  <md-toolbar color="primary">
+    <span>SurprisePanel | <small>Panel Administratora</small></span>
+    <span fxFlex></span>
+    <span [mdMenuTriggerFor]="themeMenu">Michał Wójcik</span>
+    <button md-icon-button [mdMenuTriggerFor]="themeMenu">
+      <md-icon>more_vert</md-icon>
+    </button>
+  </md-toolbar>
+
+  <md-sidenav-container fxFlex>
+    <md-sidenav mode="side" opened>
+      <md-nav-list>
+        <md-list-item [routerLink]="['/app/users/list']">
+          <md-icon md-list-icon>face</md-icon>
+          <a md-line>
+            Użytkownicy
+          </a>
+        </md-list-item>
+      </md-nav-list>
+    </md-sidenav>
+    <router-outlet></router-outlet>
+  </md-sidenav-container>
+  <md-menu #themeMenu x-position="before">
+    <!--<button md-menu-item >Twoje konto</button>-->
+    <button md-menu-item [routerLink]="['/app/users/list']">Lista uzytkowników</button>
+    <button md-menu-item [routerLink]="['/login']">Wyloguj się</button>
+  </md-menu>
+</div>
